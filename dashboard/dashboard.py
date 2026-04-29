@@ -13,7 +13,7 @@ st.set_page_config(
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv('dataset/day.csv')
+    df = pd.read_csv('./dataset/day.csv')
     df['dteday'] = pd.to_datetime(df['dteday'])
     df = df.drop(columns=['yr', 'mnth', 'weekday', 'instant'])
     df['tahun'] = df['dteday'].dt.year
